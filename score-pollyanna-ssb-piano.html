@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+
+<style>
+article, aside, dialog, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+/* あまり意味ないっぽい設定 */
+@page {
+ margin: 0;
+/* size: 210mm 297mm; */
+ size: 210mm 297mm;
+}
+
+/* ブラウザが勝手につけるマージンの削除。* とする例もあるが、body だけで済むならそれでよし */
+body {
+ margin: 0;
+}
+
+/* 外観 */
+@media screen {
+ body {
+  background: #eee;
+ }
+}
+
+/* ヘッダ部 */
+@media screen {
+ header {
+ /* border: 1px red dotted; */
+  font-family:sans-serif;
+  margin: 5px;
+  padding:10px 15px;
+  color:white;
+  background-color:black;
+  border-radius:8px;
+ }
+ #spnInput {
+  margin-left:5em;
+  font-size:80%;
+ }
+ #tbx_NumberOfDigit {
+  width:40px;
+  text-align:center;
+ }
+}
+@media print {
+ header {display:none;}
+}
+
+/* 主部 */
+/*
+main {
+ border: 1px red dashed; 
+}
+*/
+@media screen {
+ section.Sheet { /* 用紙 */
+  background-color:white;
+  height:297mm; /* A4 タテ */
+  width:210mm; /* A4 タテ */
+  margin:5mm;
+  box-shadow: 0 .5mm 2mm rgba(0,0,0,.3); /* ドロップシャドウ */
+ }
+}
+@media print {
+ section.Sheet { /* 用紙 */
+  background-color:white;
+  width:210mm; /* A4 タテ */
+/*  height:297mm; /* A4 タテ */
+  height:297mm; /* A4 タテ */
+  border:1px white solid; /* これをつけないとなぜかページ送りされてしまう */
+  page-break-after: always;
+ }
+}
+ol li {
+	list-style-type: none;
+	counter-increment: cnt;
+    padding-left:5mm;
+}
+ol li::before {
+	content: "(" counter(cnt) ")";
+}
+span.spnQItem {
+    font-size: larger;
+    padding-left:5mm;
+}
+li.Left {
+/*    padding-bottom:110mm; */
+    padding-bottom:109mm;
+    float: left;
+    width: 100mm;
+}
+li.Right {
+/*    padding-bottom:110mm; */
+    padding-bottom:109mm;
+}
+section#secBottom {
+    clear:both;
+    font-size:small;
+    padding:2mm 10mm;
+}
+
+h1 {
+  font-size:x-large ;
+  text-align: center;
+  padding:15mm;
+}
+
+/* フッタ部 */
+@media screen {
+ footer {
+ /* border: 1px navy dashed; */
+  background-color: black;
+ }
+}
+@media print {
+ footer{
+  display: none;
+ }
+}
+</style>
+<script type="text/javascript" src="./abcjs-basic-min.js" ></script>
+<title>Pollyannna (intro part)</title>
+</head>
+
+<body>
+<main>
+<section id="secTemplate" class="Sheet" >
+
+<div class="abc-score" style="margin-left: auto;margin-right: auto; padding-top: 20mm;">
+X:1      % 曲番号。必須。
+T:Pollyanna (Intro)
+T:Super Soul Bros. version
+M:4/4
+L:1/8
+Q:1/4=77
+K:G
+%%score {RH|LH}
+V:RH clef=treble
+V:LH clef=bass
+[V:RH] "G" {_B}B2   z {^C}D/G/ "D/F#" [FAd]2    B([B,EG]  | "Em7" [B,EG]3)  g3 D/E/G                | "C" [G,EG]2 G,A, "G/B" [B,G]G/B,/ z/ {^C}D/([G_B,]       | "Gm/Bb" [G_B,]2)      z3           "C" [G,CE]/[G,_B,D]/ z/ "C/D"[E,G,C]3/2 |
+[V:LH]     [G,G,,]2 z2                [F,F,,]2  z ([E,E,,]|       [E,E,,]2) z4 [D,D,,]3/2[^C,^C,,]/ |     [C,C,,]2 z2        [B,B,,] z3/2  !1!F,,/([_B,,_B,,,] |         [_B,,_B,,,]2) z [A,,A,,,]2     C,,/D,,/         z/      F,,3/2 |
+[V:RH] "G" [G,B,D]2 D/E/G "D/F#" A z         [B_ea]([d=eg]  | "Em7" [deg]2)   z         [DGAB]3 "G" [GBe]/[=FAd]3/2 | "CM7" [CEGB]B/C/ D/E/G "G/B" z {[_b_d']}[=fbd'] z     ([=FG_BD]  | "Gm/Bb" [=FG_BD]3)  "Am7" [EGc]3   DC/D/ |
+[V:LH]     G,,2     z3             [F,,F,,,] z     ([E,E,,] |       [E,E,,]2) =F,,/^F,,/(G,, G,,2)  z2              |       [C,C,,]z3        [B,,F,] z                D,/E,/([_B,_B,,] |         [_B,_B,,]3)       [A,A,,]3 D,2   |
+[V:RH] "Em" [B,GE]2 G2   "Eb" [_EGB]2 g2    | "G/D" [DGAB]2  [Bg]2 "C#m7" [B,GB]4               | "C" [EG][FD][EC][FD] "C/D" [EG][FD][EC][FD] | "G" [B,G]FD([B,CEG] "CM7" [B,CEG]3) F       |
+[V:LH]      E,,B,,  z E,      _E,2    G,,E, |       [D,D,,]4              [^C,^C,,]2 [=C,=C,,]2 |     [C,C,,]4               [D,D,,]4         |     G,,2    B,,([G,G,,]   [G,G,,]3) z/ F,,/ |
+[V:RH] "G" [B,G]FD([B,CE] "CM7" [B,CE]) G3 | "G" [B,G]FD([B,EG] "CM7" [B,EG]4)   | "G" [B,GB][FA][DG]([B,CE] "C/D" [B,CE]4) | z8 |
+[V:LH]     G,,2  B,,([E,G,,]    [E,G,,]4)  |     G,,2    z G,,3        E,3/2F,,/ |     G,,A,,B,,(D,                D,4)     | z8 |
+</div>
+<script>
+  document.querySelectorAll(".abc-score").forEach(el => {
+    ABCJS.renderAbc(el, el.textContent, {scale: 0.8});
+  });
+</script>
+
+</section> <!-- secTemplate の終わり -->
+</main>
+</body>
+
+</html>
