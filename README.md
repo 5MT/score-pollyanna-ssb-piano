@@ -10,7 +10,7 @@ GarageBand の楽譜印刷機能を使って印刷したやつを見ながら実
 
 ----
 
-The intro part of “Pollyanna” (the in-game BGM from the Famicom title MOTHER).
+The intro part of “Pollyanna” (the in-game BGM from the NES title MOTHER).
 
 listened to a jazz arrangement of this tune on YouTube by
 Super Soul Brothers, who play jazz/funk versions of
